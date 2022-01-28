@@ -39,21 +39,10 @@ public class Monster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("???");
         if (collision.tag == "Player")
         {
-            Debug.Log("!!!");
             OnPlayerTouchedMonster?.Invoke();
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("???");
-        if (collision.otherCollider.tag == "Player")
-        {
-            Debug.Log("!!!");
-            OnPlayerTouchedMonster?.Invoke();
-        }
-    }
 }
