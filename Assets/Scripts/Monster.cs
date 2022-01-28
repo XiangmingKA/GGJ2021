@@ -12,7 +12,7 @@ public class Monster : MonoBehaviour
     [Range(.1f, 10f)]
     public float movingSpeed = 1.0f;
 
-    public static UnityEvent OnPlayerTouchedMonster;
+    public static UnityEvent OnPlayerTouchedMonster = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +39,20 @@ public class Monster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("???");
         if (collision.tag == "Player")
         {
+            Debug.Log("!!!");
+            OnPlayerTouchedMonster?.Invoke();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("???");
+        if (collision.otherCollider.tag == "Player")
+        {
+            Debug.Log("!!!");
             OnPlayerTouchedMonster?.Invoke();
         }
     }
