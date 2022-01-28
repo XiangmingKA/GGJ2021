@@ -418,14 +418,20 @@ MonoBehaviour:
   leftButton: 97
   rightButton: 100
   jumpButton: 119
-  interactButton: 102
+  interactButton: 115
+  otherPlayerController: {fileID: 1813247851}
+  distanceThreshold: {x: 0.3, y: 0.5}
   maxSpeed: 5.8
   maxAcceleration: 77.3
-  jumpHeight: 0.6
+  jumpHeight: 0.8
   velocity: {x: 0, y: 0}
   desiredHorizontalSpeed: 0
   onGround: 0
   desiredJump: 0
+  canHook: 0
+  distToGround: 0
+  distanceCheck: 0
+  hooked: 0
 --- !u!50 &579368747
 Rigidbody2D:
   serializedVersion: 4
@@ -441,11 +447,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &579368748
 CapsuleCollider2D:
@@ -686,9 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00bd6e28c5950f6409bf571951143d15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkPoints:
-  - {fileID: 1805241736}
-  - {fileID: 1010701750}
+  checkPoints: []
   movingSpeed: 1
 --- !u!212 &978163399
 SpriteRenderer:
@@ -1245,11 +1249,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: -1
+  m_GravityScale: -10
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &1813247850
 CapsuleCollider2D:
@@ -1282,14 +1286,20 @@ MonoBehaviour:
   leftButton: 276
   rightButton: 275
   jumpButton: 273
-  interactButton: 111
+  interactButton: 274
+  otherPlayerController: {fileID: 579368746}
+  distanceThreshold: {x: 0.3, y: 0.5}
   maxSpeed: 5.8
   maxAcceleration: 77.3
-  jumpHeight: 0.6
+  jumpHeight: 0.8
   velocity: {x: 0, y: 0}
   desiredHorizontalSpeed: 0
   onGround: 0
   desiredJump: 0
+  canHook: 0
+  distToGround: 0
+  distanceCheck: 0
+  hooked: 0
 --- !u!1 &1997241284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,34 +1348,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTriggerOn:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417396120}
-        m_TargetAssemblyTypeName: Door, Assembly-CSharp
-        m_MethodName: DoorOpen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerOff:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1417396120}
-        m_TargetAssemblyTypeName: Door, Assembly-CSharp
-        m_MethodName: DoorClose
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!212 &1997241287
 SpriteRenderer:
   m_ObjectHideFlags: 0
