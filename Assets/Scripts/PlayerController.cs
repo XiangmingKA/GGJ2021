@@ -51,20 +51,34 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0f, 2f)]
     float jumpHeight = 1f;
     
+    [SerializeField, Range(0f, 90f)]
+    float maxGroundAngle = 25f;
+    
+    [SerializeField, Range(0f, 5f)]
+    float forceUnhookTime = 1.0f;
+    
     [ReadOnly] public Vector2 velocity;
     [ReadOnly] public float desiredHorizontalSpeed;
     [ReadOnly] public bool onGround;
     [ReadOnly] public bool desiredJump;
     [ReadOnly] public bool canHook=false;
+    [ReadOnly] public bool forceUnhook=false;
     [ReadOnly] public float distToGround = 0.0f;
     [ReadOnly] public bool distanceCheck = false;
     [ReadOnly] public bool hooked = false;
-    
+    [ReadOnly] public Vector2 contactNormal;
 
     private Rigidbody2D _rigidbody2D;
+    private float minGroundDotProduct;
+    void OnValidate () {
+        minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
+    }
+    void Awake () {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        OnValidate();
+    }
     private void Start()
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
         distToGround = GetComponent<Collider2D>().bounds.extents.y;
     }
 
@@ -90,31 +104,34 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        velocity = _rigidbody2D.velocity;
-        float maxSpeedChange = maxAcceleration * Time.deltaTime;
-        if (onGround)
-        {
-            velocity.x =
-                Mathf.MoveTowards(velocity.x, desiredHorizontalSpeed, maxSpeedChange);
-        }
+        UpdateState();
+        AdjustVelocity();
         
         if (desiredJump) {
             desiredJump = false;
             Jump();
         }
 
-        distanceCheck = DistanceCheck();
-        if (canHook && otherPlayerController.canHook && distanceCheck)
-        {
-            if (!hooked)
-            {
-                hooked = true;
-                // _velocityBackup = velocity;
-            }
+        UpdateHook();
 
-            velocity.y = 0;
-            //Hook!
-            _rigidbody2D.constraints |= RigidbodyConstraints2D.FreezePositionY;
+        _rigidbody2D.velocity = velocity;
+        onGround = false;
+    }
+
+    private void UpdateHook()
+    {
+        distanceCheck = DistanceCheck();
+        if (canHook && otherPlayerController.canHook && distanceCheck && !forceUnhook)
+        {
+                if (!hooked)
+                {
+                    hooked = true;
+                    StartCoroutine(Hook(forceUnhookTime));
+                }
+
+                velocity.y = 0;
+                //Hook!
+                _rigidbody2D.constraints |= RigidbodyConstraints2D.FreezePositionY;
         }
         else
         {
@@ -126,10 +143,12 @@ public class PlayerController : MonoBehaviour
             _rigidbody2D.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
         }
         
-        _rigidbody2D.velocity = velocity;
-        onGround = false;
+        if (!(canHook && otherPlayerController.canHook && distanceCheck) && forceUnhook)
+        {
+            forceUnhook = false;
+        }
     }
-    
+
     void OnCollisionEnter2D (Collision2D collision) {
         EvaluateCollision(collision);
     }
@@ -141,7 +160,10 @@ public class PlayerController : MonoBehaviour
     void EvaluateCollision (Collision2D collision) {
         for (int i = 0; i < collision.contactCount; i++) {
             Vector2 normal = collision.GetContact(i).normal;
-            onGround |= (normal.y * (_rigidbody2D.gravityScale>0?1:-1)) >= 0.9f;
+            if (normal.y* (_rigidbody2D.gravityScale>0?1:-1) >= minGroundDotProduct) {
+                onGround = true;
+                contactNormal = normal;
+            }
         }
     }
     
@@ -152,5 +174,45 @@ public class PlayerController : MonoBehaviour
                           Mathf.Sqrt(-2f * Physics.gravity.y * Mathf.Abs(_rigidbody2D.gravityScale) * jumpHeight);
         }
     }
-    
+    Vector2 ProjectOnContactPlane (Vector2 vector) {
+        return vector - contactNormal * Vector2.Dot(vector, contactNormal);
+    }
+    void UpdateState ()
+    {
+        velocity = _rigidbody2D.velocity;
+        if (!onGround) {
+            contactNormal = Vector2.up;
+        }
+    }
+    void AdjustVelocity () {
+        if (!hooked)
+        {
+            Vector2 xAxis = ProjectOnContactPlane(Vector2.right).normalized;
+
+            float currentX = Vector2.Dot(velocity, xAxis);
+
+            float acceleration = maxAcceleration;
+            float maxSpeedChange = acceleration * Time.deltaTime;
+            var rawVel = Mathf.MoveTowards(velocity.x, desiredHorizontalSpeed, maxSpeedChange);
+
+            float newX =
+                Mathf.MoveTowards(currentX, desiredHorizontalSpeed, maxSpeedChange);
+
+            if (onGround)
+            {
+                velocity += xAxis * (newX - currentX);
+            }
+            else
+            {
+                velocity.x = newX;
+            }
+        }
+    }
+
+    private IEnumerator Hook(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        forceUnhook = true;
+        hooked = false;
+    }
 }
