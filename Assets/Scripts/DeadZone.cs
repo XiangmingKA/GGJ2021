@@ -2,13 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DeadZone : MonoBehaviour
 {
-    public Transform rebirthPosition;
+    [FormerlySerializedAs("rebirthPosition")] public Transform defaultRebirthPosition;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        other.transform.position = rebirthPosition.position;
+        if (other.transform.GetComponent<Rebirth>())
+        {
+            other.transform.GetComponent<Rebirth>().DoRebirth();
+        }
+        else
+        {
+            other.transform.position = defaultRebirthPosition.position;
+        }
     }
 }
