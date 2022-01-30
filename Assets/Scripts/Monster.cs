@@ -14,6 +14,8 @@ public class Monster : MonoBehaviour
 
     public static UnityEvent OnPlayerTouchedMonster = new UnityEvent();
 
+    private bool facingLeft = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +28,32 @@ public class Monster : MonoBehaviour
         if (checkPoints.Length > 0)
         {
             Transform targetTrans = checkPoints[_curVisitingIndex];
-            if (Vector3.Distance(this.transform.position, targetTrans.position) > 0.001f)
+            if (Vector3.Distance(this.transform.position, targetTrans.position) > 0.01f)
             {
                 this.transform.position = Vector3.MoveTowards(this.transform.position, targetTrans.position, movingSpeed * Time.deltaTime);
             }
             else
             {
                 _curVisitingIndex = (_curVisitingIndex + 1) % checkPoints.Length;
+            }
+
+            if ( transform.position.x - targetTrans.position.x < -0.001)
+            {
+                if (facingLeft)
+                {
+                    facingLeft = false;
+                    GetComponent<SpriteRenderer>().flipX = true;
+                }
+
+            }
+            else
+            {
+                if (!facingLeft)
+                {
+                    facingLeft = true;
+                    GetComponent<SpriteRenderer>().flipX = false;
+                }
+
             }
         }
     }
