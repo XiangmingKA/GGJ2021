@@ -16,7 +16,7 @@ public class Stone : MonoBehaviour
         transform.SetParent(player.holdingPos.transform);
         transform.localPosition = Vector3.zero;
 
-        _rigidbody2D.gravityScale = belongsToDownWorld ? 1f : -1f;
+        //_rigidbody2D.gravityScale = belongsToDownWorld ? 1f : -1f;
         _rigidbody2D.simulated = false;
 
         thrownHeight = player.stoneThrowHeight;
