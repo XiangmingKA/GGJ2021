@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
         
         if (!onGround)
         {
-            if (hooked)
+            if (canHook)
             {
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isRunning",false);
