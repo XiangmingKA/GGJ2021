@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIStartPanelanim: {fileID: 635190251}
+  nextLevelName: 
 --- !u!1001 &1679359802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -274,6 +275,18 @@ PrefabInstance:
     - target: {fileID: 153484381047634964, guid: 671adb64312478f48be36a28cfbc0f74, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 647411804605237916, guid: 671adb64312478f48be36a28cfbc0f74, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c9338d690d1e8a646a7767d9e308166e, type: 3}
+    - target: {fileID: 4836310788903761064, guid: 671adb64312478f48be36a28cfbc0f74, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f6130d810e760294aba11133d8007efc, type: 3}
+    - target: {fileID: 4984493894570598391, guid: 671adb64312478f48be36a28cfbc0f74, type: 3}
+      propertyPath: nextLevelName
+      value: Level1
       objectReference: {fileID: 0}
     - target: {fileID: 7342472488999652528, guid: 671adb64312478f48be36a28cfbc0f74, type: 3}
       propertyPath: m_Camera

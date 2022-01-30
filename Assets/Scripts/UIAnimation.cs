@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class UIAnimation : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class UIAnimation : MonoBehaviour
     public Animator UIStartPanelanim;
     //public AudioClip startClip;
     AudioSource startSource;
+    public string nextLevelName = "";
 
     void Start()
     {
@@ -38,6 +41,7 @@ public class UIAnimation : MonoBehaviour
     {
         //销毁当前场景并开启下一个场景
         Debug.Log("Level 1");
+        SceneManager.LoadScene(nextLevelName);
     }
 
 
