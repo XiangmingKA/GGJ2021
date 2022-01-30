@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode jumpButton;
     public KeyCode interactButton;
 
+    public Animator animator;
     public PlayerController otherPlayerController;
 
     public GameObject holdingPos;
@@ -127,9 +128,49 @@ public class PlayerController : MonoBehaviour
         UpdateHook();
 
         _rigidbody2D.velocity = velocity;
+        UpdateAnimation();
         onGround = false;
     }
-
+    private void UpdateAnimation()
+    {
+        if(!animator) return;
+        var scale = animator.gameObject.transform.localScale;
+        if (velocity.x > 1e-3 || velocity.x<-1e-3)
+        {
+            animator.gameObject.transform.localScale = new Vector3(Mathf.Abs(scale.x)*(velocity.x > 0?1:-1)*(belongsToDownWorld?1:-1), scale.y, scale.z);
+        }
+        
+        if (!onGround)
+        {
+            if (hooked)
+            {
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isRunning",false);
+                animator.SetBool("isFlying",true);
+            }
+            else
+            {
+                animator.SetBool("isJumping", true);
+                animator.SetBool("isRunning",false);
+                animator.SetBool("isFlying",false);
+            }
+        }
+        else
+        {
+            if (velocity.magnitude > 0.1f)
+            {
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isRunning",true);
+                animator.SetBool("isFlying",false);
+            }
+            else
+            {
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isRunning",false);
+                animator.SetBool("isFlying",false);
+            }
+        }
+    }
     private void UpdateHook()
     {
         distanceCheck = DistanceCheck();
