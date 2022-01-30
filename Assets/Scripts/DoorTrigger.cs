@@ -21,25 +21,28 @@ public class DoorTrigger : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        _originPos  = this.transform.position;
+        _originPos  = this.transform.localPosition;
         _sunkPos    = _originPos - Vector3.up * sinkLength;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //_originPos = this.transform.localPosition;
+        //_sunkPos = _originPos - Vector3.up * sinkLength;
+
         if (_objOnTop > 0)
         {
-            if ( (Vector3.Distance(this.transform.position, _sunkPos) > 0.001f))
+            if ( (Vector3.Distance(this.transform.localPosition, _sunkPos) > 0.001f))
             {
-                this.transform.position = Vector3.MoveTowards(this.transform.position, _sunkPos, sinkSpeed * Time.deltaTime);
+                this.transform.localPosition = Vector3.MoveTowards(this.transform.localPosition, _sunkPos, sinkSpeed * Time.deltaTime);
             }
         }
         else
         {
-            if ((Vector3.Distance(this.transform.position, _originPos) > 0.001f))
+            if ((Vector3.Distance(this.transform.localPosition, _originPos) > 0.001f))
             {
-                this.transform.position = Vector3.MoveTowards(this.transform.position, _originPos, sinkSpeed * Time.deltaTime);
+                this.transform.localPosition = Vector3.MoveTowards(this.transform.localPosition, _originPos, sinkSpeed * Time.deltaTime);
             }
         }
     }
