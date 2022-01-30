@@ -10,7 +10,7 @@ public class Door : Interactable
         Close
     }
 
-    public DoorStatus doorStatus = DoorStatus.Open;
+    public DoorStatus doorStatus = DoorStatus.Close;
 
     public Transform openedPositon;
     public Transform closedPositon;
