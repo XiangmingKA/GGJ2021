@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7382009-85a7-4f9e-ab4e-f4d3e3fc74e9" name="Changes" comment="Done character link (maybe buggy)">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+    <list default="true" id="b7382009-85a7-4f9e-ab4e-f4d3e3fc74e9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2022/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,17 +20,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15e405c9beda435fb78db5a973118bc4157200/1a/8dd0e650/RequireComponent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/immmortal/Desktop/GGJ2022/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/immmortal/Desktop/GGJ2022/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dfe6489b22b546139f41f843f4542b8d19a00/ad/a18d9d02/Physics.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/1d/6f27068d/CapsuleCollider2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/f4/4ed3e0cf/Physics2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/c0/3f181ab8/Collider2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15e405c9beda435fb78db5a973118bc4157200/26/e2707281/GL.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15e405c9beda435fb78db5a973118bc4157200/37/26fe26b6/ReadOnlyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/immmortal/Desktop/GGJ2022/ProjectSettings/URPProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/79/d75e7138/RaycastHit2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dfe6489b22b546139f41f843f4542b8d19a00/ad/a18d9d02/Physics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/3b/886a18da/Rigidbody2D.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/immmortal/Desktop/GGJ2022/Assets/Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/1d/6f27068d/CapsuleCollider2D.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="244rqDY0fQ6sIdRbvDODVGFqDNz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -75,7 +75,8 @@
       <updated>1642900893631</updated>
       <workItem from="1642900901508" duration="6266000" />
       <workItem from="1643332259187" duration="5807000" />
-      <workItem from="1643479618927" duration="4976000" />
+      <workItem from="1643479618927" duration="5023000" />
+      <workItem from="1643493222917" duration="661000" />
     </task>
     <task id="LOCAL-00001" summary="Done character link (maybe buggy)">
       <created>1643338554947</created>
@@ -84,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643338554947</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Level 1&#10;Fine Tune">
+      <created>1643485511888</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1643485511888</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
@@ -105,6 +113,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Done character link (maybe buggy)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Done character link (maybe buggy)" />
+    <MESSAGE value="Level 1&#10;Fine Tune" />
+    <option name="LAST_COMMIT_MESSAGE" value="Level 1&#10;Fine Tune" />
   </component>
 </project>
