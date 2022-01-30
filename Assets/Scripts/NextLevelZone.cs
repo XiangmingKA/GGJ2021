@@ -14,7 +14,7 @@ public class NextLevelZone : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(curColliders.Count);
+        // Debug.Log(curColliders.Count);
         if (curColliders.Contains(player1) && curColliders.Contains(player2))
         {
             SceneManager.LoadScene(nextLevelName);
