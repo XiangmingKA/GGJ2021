@@ -49,7 +49,7 @@ public class DoorTrigger : Interactable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "Stone")
         {
             onTriggerOn?.Invoke();
             _objOnTop++;
@@ -58,7 +58,7 @@ public class DoorTrigger : Interactable
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "Stone")
         {
             onTriggerOff?.Invoke();
             _objOnTop--;

@@ -33,13 +33,17 @@ public class ReadOnlyDrawer : PropertyDrawer
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+    public bool belongsToDownWorld = true;
+
     public KeyCode leftButton;
     public KeyCode rightButton;
     public KeyCode jumpButton;
     public KeyCode interactButton;
 
     public PlayerController otherPlayerController;
-    
+
+    public GameObject holdingPos;
+
     public Vector2 distanceThreshold = new Vector2(0.1f, 0.2f);
     
     [SerializeField, Range(0f, 100f)]
@@ -50,7 +54,10 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField, Range(0f, 2f)]
     float jumpHeight = 1f;
-    
+
+    [SerializeField, Range(0f, 100f)]
+    public float stoneThrowHeight = 3f;
+
     [SerializeField, Range(0f, 90f)]
     float maxGroundAngle = 25f;
     
@@ -70,6 +77,9 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D _rigidbody2D;
     private float minGroundDotProduct;
+    private GameObject stoneObj;
+    private bool canThrow = false;
+    
     void OnValidate () {
         minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
     }
@@ -87,6 +97,8 @@ public class PlayerController : MonoBehaviour
         desiredHorizontalSpeed = ((Input.GetKey(leftButton) ? -1 : 0) + (Input.GetKey(rightButton) ? 1 : 0)) * maxSpeed;
         desiredJump |= Input.GetKey(jumpButton);
         canHook = Input.GetKey(interactButton);
+
+        HandleThrowStone();
     }
 
     private bool IsGrounded()
@@ -151,11 +163,29 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D collision) {
         EvaluateCollision(collision);
+        if (collision.gameObject.tag == "Stone")
+        {
+            HandleGrabStone(collision.gameObject);
+        }
     }
 
     void OnCollisionStay2D (Collision2D collision) {
         EvaluateCollision(collision);
+        if (collision.gameObject.tag == "Stone")
+        {
+            HandleGrabStone(collision.gameObject);
+        }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Stone")
+        {
+            Debug.LogWarning("Called HandleGrabStone");
+            HandleGrabStone(collision.gameObject);
+        }
+    }
+
 
     void EvaluateCollision (Collision2D collision) {
         for (int i = 0; i < collision.contactCount; i++) {
@@ -164,6 +194,41 @@ public class PlayerController : MonoBehaviour
                 onGround = true;
                 contactNormal = normal;
             }
+        }
+    }
+
+    void HandleGrabStone(GameObject stone)
+    {
+        if (canHook && !hooked)
+        {
+            GrabStone(stone);
+        }
+    }
+
+    void HandleThrowStone()
+    {
+        if (canHook && !hooked && canThrow)
+        {
+            if (stoneObj != null)
+            {
+                stoneObj.GetComponent<Stone>().Thrown();
+
+                stoneObj = null;
+                canHook = false;
+                canThrow = false;
+            }
+        }
+    }
+
+    void GrabStone(GameObject stone)
+    {
+        if (stoneObj == null)
+        {
+            stoneObj = stone;
+            stoneObj.GetComponent<Stone>().Grabbed(this);
+
+            canHook = false;
+            StartCoroutine(HoldCanThrow());
         }
     }
     
@@ -214,5 +279,11 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         forceUnhook = true;
         hooked = false;
+    }
+
+    private IEnumerator HoldCanThrow()
+    {
+        yield return new WaitForSeconds(1f);
+        canThrow = true;
     }
 }
