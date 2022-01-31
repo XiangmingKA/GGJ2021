@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.Serialization;
 
+#if UNITY_EDITOR
 public class ReadOnlyAttribute : PropertyAttribute
 {
  
@@ -29,6 +30,7 @@ public class ReadOnlyDrawer : PropertyDrawer
         GUI.enabled = true;
     }
 }
+#endif
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-
+[RequireComponent(typeof(AudioSource))]
 public class Monster : MonoBehaviour
 {
     public Transform[] checkPoints;
@@ -14,10 +14,16 @@ public class Monster : MonoBehaviour
 
     public static UnityEvent OnPlayerTouchedMonster = new UnityEvent();
 
+    AudioSource audio;
+
+    private bool facingLeft = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
+        audio.playOnAwake = false;
+        audio.loop = false;
     }
 
     // Update is called once per frame
@@ -26,13 +32,32 @@ public class Monster : MonoBehaviour
         if (checkPoints.Length > 0)
         {
             Transform targetTrans = checkPoints[_curVisitingIndex];
-            if (Vector3.Distance(this.transform.position, targetTrans.position) > 0.001f)
+            if (Vector3.Distance(this.transform.position, targetTrans.position) > 0.01f)
             {
                 this.transform.position = Vector3.MoveTowards(this.transform.position, targetTrans.position, movingSpeed * Time.deltaTime);
             }
             else
             {
                 _curVisitingIndex = (_curVisitingIndex + 1) % checkPoints.Length;
+            }
+
+            if ( transform.position.x - targetTrans.position.x < -0.001)
+            {
+                if (facingLeft)
+                {
+                    facingLeft = false;
+                    GetComponent<SpriteRenderer>().flipX = true;
+                }
+
+            }
+            else
+            {
+                if (!facingLeft)
+                {
+                    facingLeft = true;
+                    GetComponent<SpriteRenderer>().flipX = false;
+                }
+
             }
         }
     }
@@ -43,6 +68,31 @@ public class Monster : MonoBehaviour
         {
             OnPlayerTouchedMonster?.Invoke();
         }
+        else if (collision.tag == "Stone")
+        {
+            Dead();
+        }
+    }
+
+    bool isScheduledToDead = false;
+
+    void Dead()
+    {
+        if (!isScheduledToDead)
+        {
+            isScheduledToDead = true;
+
+            audio.PlayOneShot(audio.clip);
+
+            StartCoroutine(WaitAndDestory());
+        }
+    }
+
+    IEnumerator WaitAndDestory()
+    {
+        yield return new WaitForSeconds(2f);
+
+        this.gameObject.SetActive(false);
     }
 
 }
