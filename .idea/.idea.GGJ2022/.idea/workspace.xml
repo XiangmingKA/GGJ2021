@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7382009-85a7-4f9e-ab4e-f4d3e3fc74e9" name="Changes" comment="Level 1">
+    <list default="true" id="b7382009-85a7-4f9e-ab4e-f4d3e3fc74e9" name="Changes" comment="build">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2022/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Ending.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Ending.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GirlBody.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GirlBody.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartPanel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartPanel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NextLevelZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NextLevelZone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,20 +17,23 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15e405c9beda435fb78db5a973118bc4157200/1a/8dd0e650/RequireComponent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/f4/4ed3e0cf/Physics2D.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/c0/3f181ab8/Collider2D.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15e405c9beda435fb78db5a973118bc4157200/26/e2707281/GL.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@7.0.3/IK/Runtime/IKManager2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15e405c9beda435fb78db5a973118bc4157200/37/26fe26b6/ReadOnlyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/79/d75e7138/RaycastHit2D.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dfe6489b22b546139f41f843f4542b8d19a00/ad/a18d9d02/Physics.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/3b/886a18da/Rigidbody2D.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/immmortal/Desktop/GGJ2022/Assets/Scripts/DeadZone.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15e405c9beda435fb78db5a973118bc4157200/1a/8dd0e650/RequireComponent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13c5ad68fffb46969f1ca1df233d1e4d80a400/d0/ceb3ecbd/ShaderGUI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/c0/3f181ab8/Collider2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/immmortal/Desktop/GGJ2022/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/1d/6f27068d/CapsuleCollider2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15e405c9beda435fb78db5a973118bc4157200/26/e2707281/GL.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/79/d75e7138/RaycastHit2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13c5ad68fffb46969f1ca1df233d1e4d80a400/1f/8cd99b09/MaterialProperty.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/3b/886a18da/Rigidbody2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5879965df2da433a9a1c67c3644ba7751f800/f4/4ed3e0cf/Physics2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/immmortal/Desktop/GGJ2022/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dfe6489b22b546139f41f843f4542b8d19a00/ad/a18d9d02/Physics.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="244rqDY0fQ6sIdRbvDODVGFqDNz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -40,7 +42,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34995976" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34963325" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -48,6 +50,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Build\Beyond.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\immmortal\Desktop\GGJ2022\Build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -81,6 +91,8 @@
       <workItem from="1643332259187" duration="5807000" />
       <workItem from="1643479618927" duration="5023000" />
       <workItem from="1643493222917" duration="661000" />
+      <workItem from="1643566425312" duration="5283000" />
+      <workItem from="1643573370798" duration="3580000" />
     </task>
     <task id="LOCAL-00001" summary="Done character link (maybe buggy)">
       <created>1643338554947</created>
@@ -103,7 +115,70 @@
       <option name="project" value="LOCAL" />
       <updated>1643563434022</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Level2">
+      <created>1643566808660</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1643566808660</updated>
+    </task>
+    <task id="LOCAL-00005" summary="change build setting">
+      <created>1643567044505</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1643567044505</updated>
+    </task>
+    <task id="LOCAL-00006" summary="level 1 update">
+      <created>1643567833503</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1643567833503</updated>
+    </task>
+    <task id="LOCAL-00007" summary="NextLevelZone">
+      <created>1643568136535</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1643568136535</updated>
+    </task>
+    <task id="LOCAL-00008" summary="NextLevelZone">
+      <created>1643568201179</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1643568201179</updated>
+    </task>
+    <task id="LOCAL-00009" summary="animation">
+      <created>1643569715881</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1643569715881</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Animation Done">
+      <created>1643570400948</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1643570400948</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Girl Animation Done">
+      <created>1643570824529</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1643570824529</updated>
+    </task>
+    <task id="LOCAL-00012" summary="build">
+      <created>1643574525920</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1643574525921</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
@@ -126,6 +201,33 @@
     <MESSAGE value="Done character link (maybe buggy)" />
     <MESSAGE value="Level 1&#10;Fine Tune" />
     <MESSAGE value="Level 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Level 1" />
+    <MESSAGE value="Level2" />
+    <MESSAGE value="change build setting" />
+    <MESSAGE value="level 1 update" />
+    <MESSAGE value="NextLevelZone" />
+    <MESSAGE value="animation" />
+    <MESSAGE value="Animation Done" />
+    <MESSAGE value="Girl Animation Done" />
+    <MESSAGE value="build" />
+    <option name="LAST_COMMIT_MESSAGE" value="build" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs</url>
+          <line>137</line>
+          <properties documentPath="C:\Users\immmortal\Desktop\GGJ2022\Assets\Scripts\PlayerController.cs" initialLine="135" containingFunctionPresentation="method 'UpdateAnimation'">
+            <startOffsets>
+              <option value="3801" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3814" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
