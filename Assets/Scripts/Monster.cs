@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-
+[RequireComponent(typeof(AudioSource))]
 public class Monster : MonoBehaviour
 {
     public Transform[] checkPoints;
@@ -14,12 +14,16 @@ public class Monster : MonoBehaviour
 
     public static UnityEvent OnPlayerTouchedMonster = new UnityEvent();
 
+    AudioSource audio;
+
     private bool facingLeft = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
+        audio.playOnAwake = false;
+        audio.loop = false;
     }
 
     // Update is called once per frame
@@ -64,6 +68,31 @@ public class Monster : MonoBehaviour
         {
             OnPlayerTouchedMonster?.Invoke();
         }
+        else if (collision.tag == "Stone")
+        {
+            Dead();
+        }
+    }
+
+    bool isScheduledToDead = false;
+
+    void Dead()
+    {
+        if (!isScheduledToDead)
+        {
+            isScheduledToDead = true;
+
+            audio.PlayOneShot(audio.clip);
+
+            StartCoroutine(WaitAndDestory());
+        }
+    }
+
+    IEnumerator WaitAndDestory()
+    {
+        yield return new WaitForSeconds(2f);
+
+        this.gameObject.SetActive(false);
     }
 
 }

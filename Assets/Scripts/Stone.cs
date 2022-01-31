@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Stone : MonoBehaviour
 {
     public bool belongsToDownWorld = true;
@@ -9,6 +10,8 @@ public class Stone : MonoBehaviour
 
     private Rigidbody2D _rigidbody2D;
     private float thrownHeight;
+
+    AudioSource audio;
 
     public void Grabbed(PlayerController player)
     {
@@ -33,6 +36,9 @@ public class Stone : MonoBehaviour
         velocity.y += (holdingPlayerBelongsToDownWorld ? 1 : -1) *
                           Mathf.Sqrt(-2f * Physics.gravity.y * Mathf.Abs(_rigidbody2D.gravityScale) * thrownHeight);
         _rigidbody2D.velocity = velocity;
+
+        if (!audio.isPlaying)
+            audio.PlayOneShot(audio.clip);
     }
 
     void Awake()
@@ -43,7 +49,9 @@ public class Stone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
+        audio.playOnAwake = false;
+        audio.loop = false;
     }
 
     // Update is called once per frame
