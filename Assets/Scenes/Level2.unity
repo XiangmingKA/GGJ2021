@@ -5389,6 +5389,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 53b11b8f478e6a5498701785e8c24947, type: 3}
+    - target: {fileID: -8193321890844332735, guid: 85fe7c28bdd458e439f87b481137cf9f, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7788414588940690280, guid: 85fe7c28bdd458e439f87b481137cf9f, type: 3}
       propertyPath: belongsToDownWorld
       value: 0
@@ -8648,6 +8652,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1289278345}
     m_Modifications:
+    - target: {fileID: 3075504353892705866, guid: b15a0fa105f90fc43b74d298cd387e61, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5886903889246646725, guid: b15a0fa105f90fc43b74d298cd387e61, type: 3}
       propertyPath: m_RootOrder
       value: 0
