@@ -1590,7 +1590,6 @@ GameObject:
   - component: {fileID: 9003644027438708529}
   - component: {fileID: 8076690002671854927}
   - component: {fileID: 608506426589039918}
-  - component: {fileID: 6361582252090065929}
   m_Layer: 0
   m_Name: GirlBody
   m_TagString: Untagged
@@ -1674,18 +1673,6 @@ MonoBehaviour:
     showGizmo: 1
   - color: {r: 0, g: 1, b: 0, a: 1}
     showGizmo: 1
---- !u!114 &6361582252090065929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7798905652919037778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c490b58cb722fa4dadfb3a86d1bb197, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7963104109650284425
 GameObject:
   m_ObjectHideFlags: 0
